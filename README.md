@@ -5,9 +5,11 @@ Require Matlab2019a or above
 
 Run Visualization.mlx to visualize robot configurations.
 
+![](https://github.com/changliuliu/RobotKinematics/blob/master/illustration.png)
+
 Currently contain the following CAD models:
 1. FANUC LRMate200iD
 2. FANUC LRMate200iD/7L
 3. FANUC M16iB
 
-Capsule models for LRMate200iD and M16iB is also provided.
+Capsule models for LRMate200iD and M16iB are also provided.
