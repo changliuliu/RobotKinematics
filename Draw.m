@@ -12,6 +12,7 @@ switch mode
             otherwise
                 scale = 1;
         end
+        
         % base
         for i=1:numel(robotCAD.base)
             f=robotCAD.base{i}.f; v=robotCAD.base{i}.v.*scale; c=robotCAD.base{i}.c; color=robotCAD.base{i}.color;
@@ -21,7 +22,7 @@ switch mode
         % Link
         for i=1:length(robotCAD.link)
             v=robotCAD.link{i}.v.*scale; f=robotCAD.link{i}.f; c=robotCAD.link{i}.c; color=robotCAD.link{i}.color;
-            v = setVertice(v,M{i+1});
+            v = setVertice(v,M{i+1});            
             handle.link(i) = patch('Faces',f,'Vertices',v,'FaceVertexCData',c,'FaceColor',color,'EdgeColor','None');
             if i==1 || i==3
                 for k=1:4
@@ -32,6 +33,22 @@ switch mode
                     end
                 end
             end
+%           
+%The following commentted part is used to draw current reference frames. This is
+%useful when you try to add new robot model, you can find the mArrow3
+%function at 
+%   https://www.mathworks.com/matlabcentral/fileexchange/25372-marrow3-m-easy-to-use-3d-arrow
+%
+%             o = [0,0,0];
+%             dx = [1,0,0];
+%             dy = [0,1,0];
+%             dz = [0,0,1];
+%             orig_frame = [o; dx; dy; dz];        
+%             frame = setVertice(orig_frame, M{i+1});
+%             mArrow3(frame(1,:),frame(2,:),'color','r');
+%             mArrow3(frame(1,:),frame(3,:),'color','g');
+%             mArrow3(frame(1,:),frame(4,:),'color','b');
+%
         end
         
         % Payload
@@ -67,7 +84,6 @@ switch mode
             end
         end
 end
-
 xlim=[-1,2];
 ylim=[-1,1];
 zlim=[0,2];

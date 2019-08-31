@@ -34,5 +34,27 @@ switch id
             -pi/2, 0, 0, 1.5708;
             pi, 0.1, 0, 0];%theta,d,a,alpha
         robot.base=[0;0;0];%origin
+    case 'KinovaGen3'
+        %the constants
+        robot.nlink=6;
+        q1 = 0;
+        q2 = 0;
+        q3 = 0;
+        q4 = 0;
+        q5 = 0;
+        q6 = 0;
+        q7 = 0;
+        robot.DH=[
+            0,      (0.1564+0.1284),    0,  -pi/2;
+            pi/8,   -(0.0064),          0,  -pi/2;
+            0,      -(0.2104+0.2104),   0,  pi/2;
+            pi/4,   -(0.0064),          0,  pi/2;
+            pi,     -(0.2084+0.1059),   0,  pi/2;
+           -pi/3,   0,                  0,  -pi/2;
+            %q7+pi,  -(0.1059+0.0615),   0,  pi;
+        ];%theta,d,a,alpha
+
+        robot.base=[0;0;0];%origin
+        
 end
 end
