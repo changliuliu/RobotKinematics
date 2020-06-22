@@ -16,6 +16,8 @@ Currently contain the following CAD models:
 
 Capsule models for LRMate200iD and M16iB are also provided.
 
+(Update 2020.6.22) Matlab now supports a library of robot models https://www.mathworks.com/help/robotics/ref/loadrobot.html
+
 ## How to Add A New Robot Model
 
 Suppose we want to add a new robot called `myBot`, we need to:
